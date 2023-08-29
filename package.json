@@ -1,0 +1,80 @@
+{
+  "name": "vscode-kumbiaphp-commands",
+  "displayName": "KumbiaPHP Commands for VSCode",
+  "description": "KumbiaPHP Commands Generator for VSCode editor",
+  "version": "1.0.0",
+  "icon": "kumbiaphp.png",
+  "license": "MIT",
+  "publisher": "imgildev",
+  "author": {
+    "name": "Manuel Gil",
+    "url": "https://github.com/ManuelGil"
+  },
+  "engines": {
+    "vscode": "^1.46.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "kumbiaphp",
+    "commands",
+    "php"
+  ],
+  "homepage": "https://github.com/ManuelGil/vscode-kumbiaphp-commands",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ManuelGil/vscode-kumbiaphp-commands"
+  },
+  "bugs": {
+    "url": "https://github.com/ManuelGil/vscode-kumbiaphp-commands/issues"
+  },
+  "activationEvents": [
+    "onCommand:kumbiaphp.file.controller",
+    "onCommand:kumbiaphp.file.model"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "kumbiaphp.file.controller",
+        "title": "KumbiaPHP: Make Controller"
+      },
+      {
+        "command": "kumbiaphp.file.model",
+        "title": "KumbiaPHP: Make Model"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.46.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.48.0",
+    "eslint-config-standard-with-typescript": "^39.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.0.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "glob": "^7.1.6",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "mocha": "^10.2.0",
+    "prettier": "3.0.2",
+    "typescript": "^4.9.5",
+    "vscode-test": "^1.5.0"
+  }
+}
